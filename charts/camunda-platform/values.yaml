@@ -1305,7 +1305,7 @@ tasklist:
     ## @param tasklist.service.annotations can be used to define annotations, which will be applied to the Tasklist service
     annotations: {}
     ## @param tasklist.service.type defines the type of the service https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
-    type: ClusterIP
+    type: LoadBalancer
     ## @param tasklist.service.port defines the port of the service, where the tasklist web application will be available
     port: 80
 
@@ -2220,7 +2220,7 @@ identity:
       ## @param identity.keycloak.service.type can be set to change the service type.
       # We use clusterIP for keycloak service, since per default LoadBalancer is used, which is not supported on all cloud providers.
       # This might prevent scheduling of the service.
-      type: ClusterIP
+      type: LoadBalancer
     ## Keycloak authentication parameters
     ## ref: https://github.com/bitnami/bitnami-docker-keycloak#admin-credentials
     ##
